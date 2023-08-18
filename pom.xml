@@ -15,12 +15,13 @@
 	
 	<modules>
 		
-		<module>Gymapplication</module>
+		
 		<module>GatewayServer</module>
 		<module>IdentityService</module>
 		<module>NotificationService</module>
 		<module>ReportService</module>
 		<module>EurekaServer</module>
+		<module>Gymapplication</module>
 	</modules>
 	
 	<name>GymManagementSystem</name>
