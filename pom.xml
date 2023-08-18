@@ -54,7 +54,7 @@
 
 </configuration>
 </plugin>
-
+            
 <plugin>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -72,6 +72,18 @@
 </execution>
 </executions>
 </plugin>
+
+	<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <bindings>
+                            <binding>${basedir}/bindings/ca-certificates:/platform/bindings/ca-certificates</binding>
+                        </bindings>
+                    </image>
+                </configuration>
+            </plugin>
 </plugins>
 </build>
 
