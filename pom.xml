@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.2</version>
+		 <relativePath/>
+	</parent>
+	<groupId>com.epam</groupId>
+	<artifactId>GymManagementSystem</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<modules>
+		
+		<module>Gymapplication</module>
+		<module>GatewayServer</module>
+		<module>IdentityService</module>
+		<module>NotificationService</module>
+		<module>ReportService</module>
+		<module>EurekaServer</module>
+	</modules>
+	
+	<name>GymManagementSystem</name>
+	<description>GymApplication</description>
+<properties>
+<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+<spring-cloud.version>2022.0.2</spring-cloud.version>
+</properties>
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+<build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>${maven-compiler-plugin.version}</version>
+<configuration>
+
+</configuration>
+</plugin>
+
+<plugin>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-maven-plugin</artifactId>
+<configuration>
+<image>
+<name>${project.groupId}/gymapp:${project.version}</name>
+</image>
+</configuration>
+<executions>
+<execution>
+<phase>install</phase>
+<goals>
+<goal>build-image</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+
+</project>
